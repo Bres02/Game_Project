@@ -4,47 +4,77 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public static StamManager sm;
     Rigidbody2D rb;
+    private Vector2 movement;
     public float MoveSpeed;
     public float WalkSpeed = 5f;
     public float RunSpeed = 8f;
+    public float Accelerate, Decelerate, Cost, Regen = 0f;
     public float SpeedLimiter = 0.7f;
     float inputHorizontal;
     float inputVertical;
-    public float stamina = 100;
 
 
-    // Sets up rigid body at the start for future calls
     void Start()
     {
+        sm = GameObject.FindGameObjectWithTag("GameController").GetComponent<StamManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        MoveSpeed = WalkSpeed;
     }
 
-    // Regularly Checks for inputs to and sets moveSpeed
+
     void Update()
     {
-        MoveSpeed = WalkSpeed;
+        //Gets user inputs and places them in movement
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
+        //Makes new vector2 that stores the horizonal and vertical inputs and normalizes them if both are pressed to prevent diagonals being faster than normal movement
+        movement = new Vector2(inputHorizontal, inputVertical).normalized;
+
+        //Sets the move speed to either possible extremes
+        if(MoveSpeed <= WalkSpeed)
+        {
+            MoveSpeed = WalkSpeed;
+
+        }else if (MoveSpeed >= RunSpeed)
+        {
+            MoveSpeed = RunSpeed;
+
+        }
+
+        //Calls the sprint method
+        Sprint();
 
     }
 
     void FixedUpdate()
     {
-        //Limits player velocity to ensure that movement speed remains the constant if both directions are pressed
-        if (inputHorizontal != 0 || inputVertical != 0)
+        //adds player velocity as a vector2 every fixed interval
+        rb.velocity = new Vector2(movement.x * MoveSpeed, movement.y * MoveSpeed);
+    }
+
+    void Sprint()
+    {
+        //Ramps up player movement for sprinting if able to run when they are moving
+        if (sm.canRun)
         {
-            if (inputHorizontal != 0 && inputVertical != 0)
+            if (Input.GetKey(KeyCode.Space) && MoveSpeed <= RunSpeed && (inputHorizontal !=0 || inputVertical !=0))
             {
-                inputHorizontal *= SpeedLimiter;
-                inputVertical *= SpeedLimiter;
+                sm.consumeStamina(Cost);
+                MoveSpeed += Accelerate * Time.deltaTime;
             }
-            rb.velocity = new Vector2(inputHorizontal * MoveSpeed, inputVertical * MoveSpeed);
+            else if (MoveSpeed > WalkSpeed)
+            {
+                MoveSpeed -= Decelerate * Time.deltaTime;
+            }
         }
-        else
+        else if (!sm.canRun)
         {
-            rb.velocity = new Vector2(0f, 0f);
+            if (MoveSpeed > WalkSpeed)
+            {
+                MoveSpeed -= Decelerate * Time.deltaTime;
+            }
         }
     }
 
