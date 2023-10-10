@@ -255,9 +255,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   worldSize: {x: 20, y: 10}
-  nodeSize: 0.5
-  player: {fileID: 497451677}
-  enemy: {fileID: 1059260909}
+  nodeRadius: 0.5
 --- !u!4 &569226187
 Transform:
   m_ObjectHideFlags: 0
@@ -423,11 +421,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 763961448413994078, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.45
+      value: 5.51
       objectReference: {fileID: 0}
     - target: {fileID: 763961448413994078, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.56
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 763961448413994078, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: m_LocalPosition.z

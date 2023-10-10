@@ -8,23 +8,21 @@ public class pathfinding : MonoBehaviour
     public Transform enemy;
     public Transform player;
 
-    grid grids;
+    grid grid;
     void Awake()
     {
-        Debug.Log("code starts");
-        grids = GetComponent<grid>();
+        grid = GetComponent<grid>();
     }
 
     private void Update()
     {
-        
         path(enemy.position, player.position);
     }
 
     void path(Vector3 start, Vector3 end)
     {
-        Node startNode = grids.nodeWorldPoint(start);
-        Node endNode = grids.nodeWorldPoint(end);
+        Node startNode = grid.nodeWorldPoint(start);
+        Node endNode = grid.nodeWorldPoint(end);
 
         List<Node> nodes = new List<Node>();
         HashSet<Node> visited = new HashSet<Node>();
@@ -49,7 +47,7 @@ public class pathfinding : MonoBehaviour
                 retrace(startNode, endNode);
                 return;
             }
-            foreach (Node neighbors in grids.getNeighbors(currentNode))
+            foreach (Node neighbors in grid.getNeighbors(currentNode))
             {
                 if (!neighbors.walkable || visited.Contains(neighbors))
                 {
@@ -85,7 +83,7 @@ public class pathfinding : MonoBehaviour
             current = current.parent;
         }
         path.Reverse();
-        grids.path = path;
+        grid.path = path;
     }
 
 
