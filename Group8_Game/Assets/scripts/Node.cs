@@ -7,10 +7,24 @@ public class Node
 {
     public bool walkable;
     public Vector3 worldPosition;
+    public int gridx;
+    public int gridy;
 
-    public Node(bool _walkable, Vector3 _worldPosition)
+    public int gCost;
+    public int hCost;
+
+    public Node parent;
+
+    public Node(bool walkable, Vector3 worldPosition, int gridx, int gridy)
     {
-        walkable = _walkable;
-        worldPosition = _worldPosition;
+        this.walkable = walkable;
+        this.worldPosition = worldPosition;
+        this.gridx = gridx;
+        this.gridy = gridy;
+    }
+
+    public int fCost()
+    {
+        return hCost + gCost;
     }
 }
