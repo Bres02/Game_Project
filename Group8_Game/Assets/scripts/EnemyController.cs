@@ -16,10 +16,10 @@ public class EnemyController : MonoBehaviour
     public float viewRadius = 5f;
     [Range(1, 360)] public float viewAngle = 45f;
     public GameObject playerRef;
+    public GameObject pathManager;
     public LayerMask targetMask;
     public LayerMask wallMask;
     public bool canSeePlayer;
-
 
     // Start is called before the first frame update
     void Start()
@@ -118,10 +118,14 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Indicates to pathfinding what it should do
+        pathManager.GetComponent<pathfinding>().changePathing(canSeePlayer);
+
         //If unable to see player, object rotates at a speed equal to walkSpeed
         if (canSeePlayer == false)
         {
-            transform.Rotate(0, 0, WalkSpeed * Time.deltaTime);
+            //transform.Rotate(0, 0, WalkSpeed * Time.deltaTime); Temporarily disabling this for testing purposes
+
         }
         //If able to see player, object will rotate to follow the player position
         else if (canSeePlayer)

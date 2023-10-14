@@ -7,19 +7,44 @@ public class pathfinding : MonoBehaviour
 {
     public Transform enemy;
     public Transform player;
+    public List<Node> currentPath;
 
+    bool followPath;
     grid grid;
     void Awake()
     {
         grid = GetComponent<grid>();
+        followPath = true;
     }
 
     private void Update()
     {
-        path(enemy.position, player.position);
+        //Gets the current path start to finish
+        currentPath = path(enemy.position, player.position);
+
+        //If path isn't empty, then move the enemy by one node
+        if (currentPath != null)
+        {
+            
+            //Rotate enemy towards node
+            Vector3 nodePosition = currentPath[0].worldPosition;
+            float movementMagnitude = nodePosition.magnitude;
+            nodePosition.Normalize();
+
+            Quaternion rotateEnemy = Quaternion.LookRotation(Vector3.forward, nodePosition);
+
+
+            enemy.rotation = Quaternion.RotateTowards(enemy.rotation, rotateEnemy, 5f);
+            
+            //Move enemy towards node
+            enemy.position = Vector3.MoveTowards(enemy.position, nodePosition, 5f * Time.deltaTime);
+            
+        }
+
     }
 
-    void path(Vector3 start, Vector3 end)
+    //Function changed to retun path to use in update
+    private List<Node> path(Vector3 start, Vector3 end)
     {
         Node startNode = grid.nodeWorldPoint(start);
         Node endNode = grid.nodeWorldPoint(end);
@@ -45,7 +70,7 @@ public class pathfinding : MonoBehaviour
             if (currentNode == endNode)
             {
                 retrace(startNode, endNode);
-                return;
+                return nodes;
             }
             foreach (Node neighbors in grid.getNeighbors(currentNode))
             {
@@ -70,6 +95,10 @@ public class pathfinding : MonoBehaviour
             
 
         }
+
+        return null;
+
+        
     }
 
     void retrace (Node start, Node end)
@@ -97,4 +126,13 @@ public class pathfinding : MonoBehaviour
         }
         return (14*disx + 10*(disy - disx));
     }
+
+    //Changes what enemy path's target is
+    public void changePathing(bool canSeePlayer)
+    {
+        //If able to see player, don't follow path. Else, follow path
+        followPath = !canSeePlayer;
+    }
+
+
 }
