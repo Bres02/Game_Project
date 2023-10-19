@@ -117,7 +117,7 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         //If unable to see player, object rotates at a speed equal to walkSpeed
         if (canSeePlayer == false)
         {
@@ -129,6 +129,6 @@ public class EnemyController : MonoBehaviour
             Vector3 Look = transform.InverseTransformPoint(playerRef.transform.position);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
-        }
+        }*/
     }
 }

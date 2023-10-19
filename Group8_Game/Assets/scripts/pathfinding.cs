@@ -8,15 +8,25 @@ public class pathfinding : MonoBehaviour
     public Transform enemy;
     public Transform player;
 
+
     grid grid;
+    Node order;
+
+    public GameObject gameManager;
+
     void Awake()
     {
-        grid = GetComponent<grid>();
+        grid = gameManager.GetComponent<grid>();
     }
 
     private void Update()
     {
         path(enemy.position, player.position);
+
+        if (player.position != enemy.position && order != null)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, order.worldPosition, 1.5f * Time.deltaTime);
+        }
     }
 
     void path(Vector3 start, Vector3 end)
@@ -82,7 +92,9 @@ public class pathfinding : MonoBehaviour
             path.Add(current);
             current = current.parent;
         }
+        
         path.Reverse();
+        order = path[0];
         grid.path = path;
     }
 
