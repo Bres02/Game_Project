@@ -12,7 +12,7 @@ public class pathfinding : MonoBehaviour
     grid grid;
     Node order;
 
-    public GameObject gameManager;
+    [SerializeField] private GameObject gameManager;
 
     void Awake()
     {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4017421709930363016}
   - component: {fileID: 3319118303412720279}
   - component: {fileID: 4640147667031207435}
+  - component: {fileID: 725152027359625600}
   m_Layer: 0
   m_Name: enemy movement tester
   m_TagString: Untagged
@@ -186,3 +187,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   canSeePlayer: 0
+--- !u!114 &725152027359625600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088383953978898903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd56480a1dfb1e41b2b3bbddc058d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  player: {fileID: 0}
+  gameManager: {fileID: 0}

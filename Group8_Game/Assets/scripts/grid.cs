@@ -23,6 +23,7 @@ public class grid : MonoBehaviour
         nodeDiamiter = nodeRadius * 2;
         gridizeX = Mathf.RoundToInt(worldSize.x / nodeDiamiter);
         gridizeY = Mathf.RoundToInt(worldSize.y / nodeDiamiter);
+        Debug.Log(gridizeX + " " + gridizeY);
         createGrid();
     
     }
@@ -33,6 +34,7 @@ public class grid : MonoBehaviour
        
         //calculates the bottom left so it can generate the array
         Vector3 worldBottomLeft = transform.position - Vector3.right * worldSize.x / 2 - Vector3.up * worldSize.y/2;
+        
 
         for (int x = 0; x < gridizeX; x++)
         {
