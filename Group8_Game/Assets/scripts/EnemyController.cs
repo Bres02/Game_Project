@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     //Establishes values used for detection
     public float viewRadius = 5f;
     [Range(1, 360)] public float viewAngle = 45f;
+    [SerializeField] PlayerController player;
     public GameObject playerRef;
     public LayerMask targetMask;
     public LayerMask wallMask;
@@ -64,8 +65,16 @@ public class EnemyController : MonoBehaviour
                 //Checks to see if there is an object on wall layer between it and target, if not it sees target
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, wallMask))
                 {
-                    canSeePlayer = true;
-                    Debug.Log("Player spoted by enemy!");
+                    if(player.hidden == false)
+                    {
+                        canSeePlayer = true;
+                        Debug.Log("Player spoted by enemy!");
+                    }
+                    else
+                    {
+                        canSeePlayer = false;
+                    }
+                    
                 }
                 else
                 {

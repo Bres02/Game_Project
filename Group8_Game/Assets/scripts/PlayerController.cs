@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float SpeedLimiter = 0.7f;
     float inputHorizontal;
     float inputVertical;
+    public bool hidden;
+    public bool hide_test;
 
 
     void Start()
@@ -46,6 +48,12 @@ public class PlayerController : MonoBehaviour
         //Calls the sprint method
         Sprint();
 
+
+        //Testing hide mechanic is working for enemy sight
+        if (hide_test == true)
+        {
+            hidden = true;
+        }
     }
 
     void FixedUpdate()
@@ -75,6 +83,21 @@ public class PlayerController : MonoBehaviour
             {
                 MoveSpeed -= Decelerate * Time.deltaTime;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Locker")
+        {
+            hidden = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Locker")
+        {
+            hidden = false;
         }
     }
 
