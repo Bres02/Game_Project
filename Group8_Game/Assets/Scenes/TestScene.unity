@@ -511,6 +511,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   canSeePlayer: 0
+  isDemo: 1
 --- !u!60 &1217061832
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -603,6 +604,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   canSeePlayer: 0
+  isDemo: 1
 --- !u!60 &1363110631
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class pathfinding : MonoBehaviour
 
         if (player.position != enemy.position && order != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, order.worldPosition, 1.5f * Time.deltaTime);
+           transform.position = Vector2.MoveTowards(transform.position, order.worldPosition, 1.5f * Time.deltaTime);
         }
     }
 

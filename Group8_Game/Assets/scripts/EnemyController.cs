@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     public LayerMask wallMask;
     public bool canSeePlayer;
 
-
+    [SerializeField] bool isDemo;
     // Start is called before the first frame update
     void Start()
     {
@@ -117,18 +117,22 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        //If unable to see player, object rotates at a speed equal to walkSpeed
-        if (canSeePlayer == false)
+    {
+        if (isDemo)
         {
-            transform.Rotate(0, 0, WalkSpeed * Time.deltaTime);
+            //If unable to see player, object rotates at a speed equal to walkSpeed
+            if (canSeePlayer == false)
+            {
+                transform.Rotate(0, 0, WalkSpeed * Time.deltaTime);
+            }
+            //If able to see player, object will rotate to follow the player position
+            else if (canSeePlayer)
+            {
+                Vector3 Look = transform.InverseTransformPoint(playerRef.transform.position);
+                float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
+                transform.Rotate(0, 0, targetAngle);
+            }
         }
-        //If able to see player, object will rotate to follow the player position
-        else if (canSeePlayer)
-        {
-            Vector3 Look = transform.InverseTransformPoint(playerRef.transform.position);
-            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
-            transform.Rotate(0, 0, targetAngle);
-        }*/
+
     }
 }
