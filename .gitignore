@@ -41,6 +41,8 @@ sysinfo.txt
 *.lib
 *.sbr
 AssemblyInfo.cs
+
+/[Uu]ser[Ss]ettings/
 # Anything else
 Thumbs.db
 #Nintendo Switch
