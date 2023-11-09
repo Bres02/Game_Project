@@ -1,0 +1,555 @@
+fileFormatVersion: 2
+guid: 57215ded8c558494dae4944ad63c8017
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -16}
+        - {x: -3, y: -15}
+        - {x: -2, y: -14}
+        - {x: 2, y: -14}
+        - {x: 3, y: -15}
+        - {x: 4, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07aa56f35fe0684b8180ea498ff5032
+      internalID: -1340701929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -2, y: 14}
+        - {x: -2.9999962, y: 15.000008}
+        - {x: -4, y: 16}
+        - {x: 4, y: 16}
+        - {x: 3.0299988, y: 15.029991}
+        - {x: 2, y: 14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0664f94e11a7d3445a41bdeaf182aafd
+      internalID: 877095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -14.970001, y: -2.9700012}
+        - {x: -16, y: -4}
+        - {x: -16, y: 4}
+        - {x: -14.970009, y: 2.9700012}
+        - {x: -14, y: 2}
+        - {x: -14, y: -2}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1cbe35070540934885a39f6bf138a98
+      internalID: 906205950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 15, y: -3.0000076}
+        - {x: 14, y: -2}
+        - {x: 14, y: 2}
+        - {x: 15.029991, y: 3.0299988}
+        - {x: 16, y: 4}
+        - {x: 16, y: -4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863dcd2762e506042a5f5d3c1cd56112
+      internalID: 1565697125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -15}
+        - {x: -4, y: -4}
+        - {x: -2, y: 2}
+        - {x: 4, y: 4}
+        - {x: 15, y: 4}
+        - {x: 15, y: -4}
+        - {x: 4, y: -4}
+        - {x: 4, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82690afc30f60de42b49a077edf97798
+      internalID: 1565437639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -4}
+        - {x: -15, y: 4}
+        - {x: 15, y: 4}
+        - {x: 15, y: -4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5825ab5425b73849bc8905eb8358cb2
+      internalID: -1687298794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 4, y: -16}
+        - {x: -4, y: -16}
+        - {x: -4, y: -4}
+        - {x: -15, y: -4}
+        - {x: -15, y: 4}
+        - {x: -4, y: 4}
+        - {x: 2, y: 2}
+        - {x: 4, y: -4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52243ad3deb291045a266a16cc9146de
+      internalID: 2096221225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -14, y: -14}
+        - {x: -14, y: 14}
+        - {x: 14, y: 14}
+        - {x: 14, y: -14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364f3dfd52d49474eb1f0ec435e6c719
+      internalID: 1327657191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -15}
+        - {x: -4, y: -3}
+        - {x: -4, y: 6}
+        - {x: -4, y: 14}
+        - {x: 4, y: 14}
+        - {x: 4, y: 6}
+        - {x: 4, y: -3}
+        - {x: 4, y: -9}
+        - {x: 4, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b9445ae452f2a54a8f0ddcb026afd93
+      internalID: 2136129638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape:
+      - - {x: -14, y: 14}
+        - {x: 14, y: 14}
+        - {x: 14, y: -14}
+        - {x: -14, y: -14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14f0fa4899fddd4a886e875345cf427
+      internalID: -1202944939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -15}
+        - {x: -4, y: 15}
+        - {x: 4, y: 15}
+        - {x: 4, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40f7ac9b21f0c84c810832ea045e97f
+      internalID: 1618160015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ed82a01abe53d41ac5c848fe6ecfbb
+      internalID: 612145062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 15, y: -4}
+        - {x: 4, y: -4}
+        - {x: -2, y: -2}
+        - {x: -4, y: 4}
+        - {x: -4, y: 15}
+        - {x: 4, y: 15}
+        - {x: 4, y: 4}
+        - {x: 15, y: 4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d53091b11a98dc4080bd3d02724d2a3
+      internalID: -1612233864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -4}
+        - {x: -15, y: 4}
+        - {x: 15, y: 4}
+        - {x: 15, y: -4}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ced3f1d424eda4bab49520b95e9787
+      internalID: -1908054791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Room_Normal (1)_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -4, y: -4}
+        - {x: -15, y: -4}
+        - {x: -15, y: 4}
+        - {x: -4, y: 4}
+        - {x: -4, y: 16}
+        - {x: 4, y: 16}
+        - {x: 4, y: 4}
+        - {x: 2, y: -2}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f333e366a863b3840942ebef148ca48c
+      internalID: 562566576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Large_Room_Normal (1)_0: -1340701929
+      Large_Room_Normal (1)_1: 877095
+      Large_Room_Normal (1)_10: 1618160015
+      Large_Room_Normal (1)_11: 612145062
+      Large_Room_Normal (1)_12: -1612233864
+      Large_Room_Normal (1)_13: -1908054791
+      Large_Room_Normal (1)_14: 562566576
+      Large_Room_Normal (1)_2: 906205950
+      Large_Room_Normal (1)_3: 1565697125
+      Large_Room_Normal (1)_4: 1565437639
+      Large_Room_Normal (1)_5: -1687298794
+      Large_Room_Normal (1)_6: 2096221225
+      Large_Room_Normal (1)_7: 1327657191
+      Large_Room_Normal (1)_8: 2136129638
+      Large_Room_Normal (1)_9: -1202944939
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
