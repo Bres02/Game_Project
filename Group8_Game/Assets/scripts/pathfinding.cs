@@ -1,19 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class pathfinding : MonoBehaviour
 {
     public Transform enemy;
     public Transform player;
-
+    Node tarNode;
+    enum enemyState { };
 
     grid grid;
-    Node order;
+    List<Node> order;
+    
+    [SerializeField] private List<GameObject> patrolPoints;
 
     [SerializeField] private GameObject gameManager;
-
+    
     void Awake()
     {
         grid = gameManager.GetComponent<grid>();
@@ -21,12 +25,29 @@ public class pathfinding : MonoBehaviour
 
     private void Update()
     {
-        path(enemy.position, player.position);
+        if (order != null && order.Capacity >= 0 && tarNode.worldPosition != enemy.position)
+        {
+            if(enemy.position == order[0].worldPosition)
+            {
+                order.RemoveAt(0);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+            }
+        }
+        else
+        {
+            patrolPoints.Add(patrolPoints[0]);
+            patrolPoints.RemoveAt(0);
+            path(enemy.position, patrolPoints[0].transform.position);
+        }
 
+        /*
         if (player.position != enemy.position && order != null)
         {
            transform.position = Vector2.MoveTowards(transform.position, order.worldPosition, 1.5f * Time.deltaTime);
-        }
+        }*/
     }
 
     void path(Vector3 start, Vector3 end)
@@ -91,10 +112,11 @@ public class pathfinding : MonoBehaviour
             
             path.Add(current);
             current = current.parent;
+            
         }
-        
+        tarNode = path[0];
         path.Reverse();
-        order = path[0];
+        order = path;
         grid.path = path;
     }
 
