@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    enum enemyState { patrol, chase, search };
+
     //movement values
     Vector2 target;
     public float WalkSpeed = 5f;
@@ -68,27 +71,32 @@ public class EnemyController : MonoBehaviour
                     if(player.hidden == false)
                     {
                         canSeePlayer = true;
+                        this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
                         Debug.Log("Player spoted by enemy!");
                     }
                     else
                     {
                         canSeePlayer = false;
+                        this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
                     }
                     
                 }
                 else
                 {
                     canSeePlayer = false;
+                    this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
                 }
             }
             else
             {
                 canSeePlayer = false;
+                this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
             }
         }
         else if (canSeePlayer)
         {
             canSeePlayer = false;
+            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
             Debug.Log("Enemy has lost sight of player");
         }
     }

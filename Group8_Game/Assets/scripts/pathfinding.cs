@@ -9,7 +9,9 @@ public class pathfinding : MonoBehaviour
     public Transform enemy;
     public Transform player;
     Node tarNode;
-    enum enemyState { };
+
+    public enum enemyState {patrol, chase, search };
+    public enemyState state = enemyState.patrol;
 
     grid grid;
     List<Node> order;
@@ -21,33 +23,39 @@ public class pathfinding : MonoBehaviour
     void Awake()
     {
         grid = gameManager.GetComponent<grid>();
+        
     }
 
     private void Update()
     {
-        if (order != null && order.Capacity >= 0 && tarNode.worldPosition != enemy.position)
+        if (state.Equals(enemyState.patrol))
         {
-            if(enemy.position == order[0].worldPosition)
+            if (order != null && order.Capacity >= 0 && tarNode.worldPosition != enemy.position)
             {
-                order.RemoveAt(0);
+                if (enemy.position == order[0].worldPosition)
+                {
+                    order.RemoveAt(0);
+                }
+                else
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+                }
             }
             else
             {
-                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+                patrolPoints.Add(patrolPoints[0]);
+                patrolPoints.RemoveAt(0);
+                path(enemy.position, patrolPoints[0].transform.position);
             }
-        }
-        else
+        }else if(state.Equals(enemyState.chase))
         {
-            patrolPoints.Add(patrolPoints[0]);
-            patrolPoints.RemoveAt(0);
-            path(enemy.position, patrolPoints[0].transform.position);
-        }
+            path(enemy.position, player.position);
+            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
 
-        /*
-        if (player.position != enemy.position && order != null)
+        }else if(state.Equals(enemyState.search))
         {
-           transform.position = Vector2.MoveTowards(transform.position, order.worldPosition, 1.5f * Time.deltaTime);
-        }*/
+            Debug.Log(state);
+        }
     }
 
     void path(Vector3 start, Vector3 end)
