@@ -14,7 +14,7 @@ public class pathfinding : MonoBehaviour
     public enemyState state = enemyState.patrol;
 
     grid grid;
-    List<Node> order;
+    public List<Node> order;
     
     [SerializeField] private List<GameObject> patrolPoints;
 
@@ -25,6 +25,12 @@ public class pathfinding : MonoBehaviour
         grid = gameManager.GetComponent<grid>();
         
     }
+
+/*    private void FixedUpdate()
+    {
+        Vector3 towards = order[0].worldPosition - enemy.position;
+        enemy.rotation = Quaternion.Lerp(enemy.rotation, Quaternion.LookRotation(towards), .02f);
+    }*/
 
     private void Update()
     {
@@ -56,7 +62,23 @@ public class pathfinding : MonoBehaviour
         {
             Debug.Log(state);
         }
+        if (GetComponent<EnemyController>().canSeePlayer == false)
+        {
+            
+            Vector3 Look = transform.InverseTransformPoint(GetComponent<pathfinding>().order[0].worldPosition);
+            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
+            if(true){
+
+            }
+            transform.Rotate(0, 0, targetAngle);
+        }else if (GetComponent<EnemyController>().canSeePlayer)
+        {
+            Vector3 Look = transform.InverseTransformPoint(player.position);
+            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
+            transform.Rotate(0, 0, targetAngle);
+        }
     }
+
 
     void path(Vector3 start, Vector3 end)
     {
