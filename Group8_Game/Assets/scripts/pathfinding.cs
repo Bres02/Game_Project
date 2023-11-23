@@ -36,9 +36,9 @@ public class pathfinding : MonoBehaviour
     {
         if (state.Equals(enemyState.patrol))
         {
-            if (order != null && order.Capacity >= 0 && tarNode.worldPosition != enemy.position)
+            if (order != null && order.Capacity >= 0 && /*tarNode.worldPosition != enemy.position*/ Vector2.Distance(enemy.position,tarNode.worldPosition) > .01f )
             {
-                if (enemy.position == order[0].worldPosition)
+                if (/*enemy.position == order[0].worldPosition &&*/ Vector2.Distance(enemy.position, order[0].worldPosition) < .01f)
                 {
                     order.RemoveAt(0);
                 }
@@ -64,14 +64,14 @@ public class pathfinding : MonoBehaviour
         }
         if (GetComponent<EnemyController>().canSeePlayer == false)
         {
-            
-            Vector3 Look = transform.InverseTransformPoint(GetComponent<pathfinding>().order[0].worldPosition);
-            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
-            if(true){
 
-            }
+            Vector3 Look = transform.InverseTransformPoint(order[0].worldPosition);
+            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
-        }else if (GetComponent<EnemyController>().canSeePlayer)
+
+            
+        }
+        else if (GetComponent<EnemyController>().canSeePlayer)
         {
             Vector3 Look = transform.InverseTransformPoint(player.position);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;

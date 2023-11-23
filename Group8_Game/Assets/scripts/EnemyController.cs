@@ -135,25 +135,23 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (isDemo)
-        //{
-            //If unable to see player, object rotates at a speed equal to walkSpeed
-            if (canSeePlayer == false)
-            {
+
+        if (canSeePlayer == false && GetComponent<pathfinding>().order.Count >0)
+        {
             Vector3 Look = transform.InverseTransformPoint(GetComponent<pathfinding>().order[0].worldPosition);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
             /*Vector3 towards = GetComponent<pathfinding>().order[0].worldPosition - transform.position;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(towards), .02f);*/
         }
-            //If able to see player, object will rotate to follow the player position
-            else if (canSeePlayer)
-            {
-                Vector3 Look = transform.InverseTransformPoint(playerRef.transform.position);
-                float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
-                transform.Rotate(0, 0, targetAngle);
-            }
-        //}
+        //If able to see player, object will rotate to follow the player position
+        else if (canSeePlayer)
+        {
+            Vector3 Look = transform.InverseTransformPoint(playerRef.transform.position);
+            float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
+            transform.Rotate(0, 0, targetAngle);
+        }
+       
 
     }
 
