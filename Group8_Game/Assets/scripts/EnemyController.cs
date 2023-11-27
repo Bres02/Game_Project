@@ -72,31 +72,82 @@ public class EnemyController : MonoBehaviour
                     {
                         canSeePlayer = true;
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
-                        Debug.Log("Player spoted by enemy!");
+                        //Debug.Log("Player spoted by enemy!");
                     }
                     else
                     {
                         canSeePlayer = false;
-                        this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                        if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
+                        {
+
+                        }else if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.chase)
+                        {
+                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.search;
+                        }
+                        else
+                        {
+                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                        }
+                        /*if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
+                        {
+                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
+                        }
+                        else
+                        {
+                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                        }*/
                     }
-                    
+
                 }
                 else
                 {
                     canSeePlayer = false;
-                    this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                    if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
+                    {
+
+                    }
+                    else if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.chase)
+                    {
+                        this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.search;
+                    }
+                    else
+                    {
+                        this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                    }
                 }
             }
             else
             {
                 canSeePlayer = false;
-                this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
+                {
+
+                }
+                else if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.chase)
+                {
+                    this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.search;
+                }
+                else
+                {
+                    this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                }
             }
         }
         else if (canSeePlayer)
         {
             canSeePlayer = false;
-            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+            if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
+            {
+
+            }
+            else if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.chase)
+            {
+                this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.search;
+            }
+            else
+            {
+                this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+            }
             Debug.Log("Enemy has lost sight of player");
         }
     }

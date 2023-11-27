@@ -12,7 +12,8 @@ public class grid : MonoBehaviour
     public float nodeRadius; 
     Node[,] gridArray;
 
-
+    [SerializeField] private GameObject player;
+    Vector3 playerPosition;
 
     float nodeDiamiter;
     int gridizeX, gridizeY;
@@ -26,6 +27,11 @@ public class grid : MonoBehaviour
         Debug.Log(gridizeX + " " + gridizeY);
         createGrid();
     
+    }
+
+    private void Update()
+    {
+        playerPosition = player.transform.position;
     }
 
     private void createGrid()

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class pathfinding : MonoBehaviour
 {
+    int counter = 0;
+
     public Transform enemy;
     public Transform player;
     Node tarNode;
@@ -53,23 +55,39 @@ public class pathfinding : MonoBehaviour
                 patrolPoints.RemoveAt(0);
                 path(enemy.position, patrolPoints[0].transform.position);
             }
+            Debug.Log(state.ToString());
         }else if(state.Equals(enemyState.chase))
         {
             path(enemy.position, player.position);
             transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+            counter = 0;
+            Debug.Log(state.ToString());
 
-        }else if(state.Equals(enemyState.search))
-        {
-            Debug.Log(state);
         }
+        else if(state.Equals(enemyState.search))
+        {
+            if(counter < 120)
+            {
+                path(enemy.position, player.position);
+                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+                Debug.Log(state);
+                counter++;
+            }
+            else
+            {
+                state = enemyState.patrol;
+                counter = 0;
+            }
+
+        }
+
+
         if (GetComponent<EnemyController>().canSeePlayer == false)
         {
 
             Vector3 Look = transform.InverseTransformPoint(order[0].worldPosition);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
-
-            
         }
         else if (GetComponent<EnemyController>().canSeePlayer)
         {
