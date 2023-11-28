@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     float inputHorizontal;
     float inputVertical;
     public bool hidden;
+    public bool lockMove;
     public bool hide_test;
 
 
@@ -28,26 +29,30 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Gets user inputs and places them in movement
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
-        //Makes new vector2 that stores the horizonal and vertical inputs and normalizes them if both are pressed to prevent diagonals being faster than normal movement
-        movement = new Vector2(inputHorizontal, inputVertical).normalized;
-
-        //Sets the move speed to either possible extremes
-        if(MoveSpeed <= WalkSpeed)
+        if (!lockMove)
         {
-            MoveSpeed = WalkSpeed;
+            //Gets user inputs and places them in movement
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            //Makes new vector2 that stores the horizonal and vertical inputs and normalizes them if both are pressed to prevent diagonals being faster than normal movement
+            movement = new Vector2(inputHorizontal, inputVertical).normalized;
 
-        }else if (MoveSpeed >= RunSpeed)
-        {
-            MoveSpeed = RunSpeed;
+            //Sets the move speed to either possible extremes
+            if (MoveSpeed <= WalkSpeed)
+            {
+                MoveSpeed = WalkSpeed;
 
+            }
+            else if (MoveSpeed >= RunSpeed)
+            {
+                MoveSpeed = RunSpeed;
+
+            }
+
+            //Calls the sprint method
+            Sprint();
         }
-
-        //Calls the sprint method
-        Sprint();
-
+        
 
         //Testing hide mechanic is working for enemy sight
         if (hide_test == true)
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Locker")
@@ -99,6 +104,6 @@ public class PlayerController : MonoBehaviour
         {
             hidden = false;
         }
-    }
+    }*/
 
 }
