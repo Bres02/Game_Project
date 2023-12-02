@@ -88,14 +88,6 @@ public class EnemyController : MonoBehaviour
                         {
                             this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
                         }
-                        /*if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
-                        {
-                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
-                        }
-                        else
-                        {
-                            this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
-                        }*/
                     }
 
                 }

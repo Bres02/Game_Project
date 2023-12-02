@@ -17,6 +17,10 @@ public class pathfinding : MonoBehaviour
 
     grid grid;
     public List<Node> order;
+
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float runeSpeed;
+    
     
     [SerializeField] private List<GameObject> patrolPoints;
 
@@ -28,25 +32,19 @@ public class pathfinding : MonoBehaviour
         
     }
 
-/*    private void FixedUpdate()
-    {
-        Vector3 towards = order[0].worldPosition - enemy.position;
-        enemy.rotation = Quaternion.Lerp(enemy.rotation, Quaternion.LookRotation(towards), .02f);
-    }*/
-
     private void Update()
     {
         if (state.Equals(enemyState.patrol))
         {
-            if (order != null && order.Capacity >= 0 && /*tarNode.worldPosition != enemy.position*/ Vector2.Distance(enemy.position,tarNode.worldPosition) > .01f )
+            if (order != null && order.Capacity >= 0 && Vector2.Distance(enemy.position,tarNode.worldPosition) > .01f )
             {
-                if (/*enemy.position == order[0].worldPosition &&*/ Vector2.Distance(enemy.position, order[0].worldPosition) < .01f)
+                if (Vector2.Distance(enemy.position, order[0].worldPosition) < .01f)
                 {
                     order.RemoveAt(0);
                 }
                 else
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, moveSpeed * Time.deltaTime);
                 }
             }
             else
@@ -58,8 +56,9 @@ public class pathfinding : MonoBehaviour
             Debug.Log(state.ToString());
         }else if(state.Equals(enemyState.chase))
         {
+
             path(enemy.position, player.position);
-            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, runeSpeed * Time.deltaTime);
             counter = 0;
             Debug.Log(state.ToString());
 
@@ -69,7 +68,7 @@ public class pathfinding : MonoBehaviour
             if(counter < 120)
             {
                 path(enemy.position, player.position);
-                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, 1.5f * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, moveSpeed * Time.deltaTime);
                 Debug.Log(state);
                 counter++;
             }

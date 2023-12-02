@@ -203,4 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   player: {fileID: 0}
+  state: 0
+  moveSpeed: 6
+  patrolPoints: []
   gameManager: {fileID: 0}
