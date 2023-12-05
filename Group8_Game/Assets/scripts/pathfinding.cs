@@ -31,12 +31,11 @@ public class pathfinding : MonoBehaviour
         grid = gameManager.GetComponent<grid>();
         
     }
-
-    private void Update()
+    private void FixedUpdate()
     {
-        if (state.Equals(enemyState.patrol))
+         if (state.Equals(enemyState.patrol))
         {
-            if (order != null && order.Capacity >= 0 && Vector2.Distance(enemy.position,tarNode.worldPosition) > .01f )
+            if (order != null && order.Capacity >= 0 && Vector2.Distance(enemy.position, tarNode.worldPosition) >= .01f)
             {
                 if (Vector2.Distance(enemy.position, order[0].worldPosition) < .01f)
                 {
@@ -54,31 +53,7 @@ public class pathfinding : MonoBehaviour
                 path(enemy.position, patrolPoints[0].transform.position);
             }
             Debug.Log(state.ToString());
-        }else if(state.Equals(enemyState.chase))
-        {
-
-            path(enemy.position, player.position);
-            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, runeSpeed * Time.deltaTime);
-            counter = 0;
-            Debug.Log(state.ToString());
-
-        }
-        else if(state.Equals(enemyState.search))
-        {
-            if(counter < 120)
-            {
-                path(enemy.position, player.position);
-                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, moveSpeed * Time.deltaTime);
-                Debug.Log(state);
-                counter++;
-            }
-            else
-            {
-                state = enemyState.patrol;
-                counter = 0;
-            }
-
-        }
+        } 
 
 
         if (GetComponent<EnemyController>().canSeePlayer == false)
@@ -93,6 +68,34 @@ public class pathfinding : MonoBehaviour
             Vector3 Look = transform.InverseTransformPoint(player.position);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
+        }
+    }
+    private void Update()
+    {
+        if (state.Equals(enemyState.chase))
+        {
+
+            path(enemy.position, player.position);
+            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, runeSpeed * Time.deltaTime);
+            counter = 0;
+            Debug.Log(state.ToString());
+
+        }
+        else if (state.Equals(enemyState.search))
+        {
+            if (counter < 120)
+            {
+                path(enemy.position, player.position);
+                transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, moveSpeed * Time.deltaTime);
+                Debug.Log(state);
+                counter++;
+            }
+            else
+            {
+                state = enemyState.patrol;
+                counter = 0;
+            }
+
         }
     }
 
