@@ -50,6 +50,7 @@ MonoBehaviour:
     m_Bits: 128
   worldSize: {x: 20, y: 10}
   nodeRadius: 0.5
+  player: {fileID: 0}
 --- !u!114 &-4446888344170462977
 MonoBehaviour:
   m_ObjectHideFlags: 0
