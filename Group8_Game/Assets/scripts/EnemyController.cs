@@ -7,13 +7,11 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     enum enemyState { patrol, chase, search };
-<<<<<<< Updated upstream
     LevelManager levelManager;
-=======
 
     [SerializeField] AudioSource detectedSound;
     [SerializeField] AudioClip detected;
->>>>>>> Stashed changes
+
     //movement values
     Vector2 target;
     public float WalkSpeed = 5f;
