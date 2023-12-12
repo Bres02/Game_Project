@@ -343,11 +343,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1818470960843380220, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
   m_PrefabInstance: {fileID: 2005953467}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457684711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4670685192953365770, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
+  m_PrefabInstance: {fileID: 2005953467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271673889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4106bd78552759448b4e4cbe90044dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &497451677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 763961448413994078, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
   m_PrefabInstance: {fileID: 1756313046}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &504899123
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 271673889}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 457684711}
+    - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_Name
+      value: Locker Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.7079997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7105118142914341475, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
 --- !u!1 &569226185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2354634709842011082, guid: cf548f986222abd409d684ee00a703e5, type: 3}
@@ -365,7 +441,7 @@ GameObject:
   m_Layer: 0
   m_Name: patrol point 3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -682,7 +758,7 @@ GameObject:
   m_Layer: 0
   m_Name: patrol point 1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -778,7 +854,7 @@ GameObject:
   m_Layer: 0
   m_Name: patrol point 2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1935,3 +2011,4 @@ SceneRoots:
   - {fileID: 903613333}
   - {fileID: 1121341659}
   - {fileID: 652142524}
+  - {fileID: 504899123}
