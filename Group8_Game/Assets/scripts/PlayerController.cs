@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static StamManager sm;
+    Animator anim;
     Rigidbody2D rb;
     private Vector2 movement;
     public float MoveSpeed;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         sm = GameObject.FindGameObjectWithTag("GameController").GetComponent<StamManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
         MoveSpeed = WalkSpeed;
     }
 
@@ -34,6 +36,19 @@ public class PlayerController : MonoBehaviour
             //Gets user inputs and places them in movement
             inputHorizontal = Input.GetAxisRaw("Horizontal");
             inputVertical = Input.GetAxisRaw("Vertical");
+            anim.SetFloat("X_velocity", inputHorizontal);
+            anim.SetFloat("Y_velocity", inputVertical);
+            if (inputHorizontal != 0)
+            {
+                anim.SetBool("Horizontal", (inputHorizontal != 0));
+                anim.SetBool("Vertical", false);
+            }
+            else
+            {
+                anim.SetBool("Vertical", (inputVertical != 0));
+                anim.SetBool("Horizontal", false);
+            }
+            
             //Makes new vector2 that stores the horizonal and vertical inputs and normalizes them if both are pressed to prevent diagonals being faster than normal movement
             movement = new Vector2(inputHorizontal, inputVertical).normalized;
 

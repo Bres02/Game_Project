@@ -7,6 +7,7 @@ public class LockerManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerController playerStatus;
     [SerializeField] GameObject locker;
+    Animator anim;
     BoxCollider2D solidLock;
     public Vector3 lastposition;
     public bool inRange;
@@ -14,6 +15,7 @@ public class LockerManager : MonoBehaviour
     void Start()
     {
         solidLock = GetComponent<BoxCollider2D>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +39,9 @@ public class LockerManager : MonoBehaviour
                 player.transform.position = locker.transform.position;
                 playerStatus.lockMove = true;
                 playerStatus.hidden = true;
-                
+                anim.SetBool("Full", true);
+                anim.SetBool("Empty", false);
+
             } else if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden == true)
             {
                 solidLock.enabled = true;
@@ -45,7 +49,10 @@ public class LockerManager : MonoBehaviour
                 player.transform.position = lastposition;
                 playerStatus.lockMove = false;
                 playerStatus.hidden = false;
-                
+                anim.SetBool("Empty", true);
+                anim.SetBool("Full", false);
+
+
             }
             //Prevents players from moving out of lockers due to physics upon entering them
             if (playerStatus.hidden != false && player.transform.position != locker.transform.position)
