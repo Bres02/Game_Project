@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3319118303412720279}
   - component: {fileID: 4640147667031207435}
   - component: {fileID: 725152027359625600}
+  - component: {fileID: 4498412649112202307}
   m_Layer: 0
-  m_Name: enemy movement tester
+  m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1330350010, guid: 1d30a44e65e687944be2327aad19dcb4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -150,8 +151,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,7 +179,7 @@ MonoBehaviour:
   WalkSpeed: 50
   SpeedLimiter: 0.7
   viewRadius: 5
-  viewAngle: 45
+  viewAngle: 163
   player: {fileID: 4670685192953365770, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
   playerRef: {fileID: 0}
   targetMask:
@@ -201,9 +202,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd56480a1dfb1e41b2b3bbddc058d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 763961448413994078}
   player: {fileID: 0}
   state: 0
-  moveSpeed: 6
-  patrolPoints: []
+  moveSpeed: 10
+  runeSpeed: 6
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   gameManager: {fileID: 0}
+--- !u!95 &4498412649112202307
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088383953978898903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc16501a22865d7438de13f794c265ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
