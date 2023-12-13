@@ -258,9 +258,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSound: {fileID: 6954961637282498617}
   dash: {fileID: 8300000, guid: e9bc800cb24ffc845bcc77c49ab64d31, type: 3}
+  sprite: {fileID: 3724038213834093155}
   MoveSpeed: 0
-  WalkSpeed: 3.5
-  RunSpeed: 7
+  WalkSpeed: 4
+  RunSpeed: 8
   Accelerate: 2
   Decelerate: 4
   Cost: 20

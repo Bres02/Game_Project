@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] AudioSource detectedSound;
     [SerializeField] AudioClip detected;
+    [SerializeField] AudioClip scream;
 
     //movement values
     Vector2 target;
@@ -30,7 +31,8 @@ public class EnemyController : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask wallMask;
     public bool canSeePlayer;
-    private int counter = 0;
+    private int detectCounter = 0;
+    private int screamCounter = 0;
 
     private bool didScream = false;
 
@@ -63,7 +65,8 @@ public class EnemyController : MonoBehaviour
     {
         //Creats an array for objects in the target layer that are within the viewable radius of the object
         Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
-        counter = 0;
+        detectCounter = 0;
+        screamCounter = 0;
         //If the array's length isn't 0, than an object in the target layer is in the radius
         if (rangeCheck.Length != 0)
         {
@@ -79,11 +82,12 @@ public class EnemyController : MonoBehaviour
                 //Checks to see if there is an object on wall layer between it and target, if not it sees target
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, wallMask))
                 {
-                    counter += 1;
+                    detectCounter += 1;
+                    screamCounter += 1;
                     if (player.hidden == false)
                     {
                         canSeePlayer = true;
-                        if (canSeePlayer && counter < 2)
+                        if (canSeePlayer && detectCounter  < 2)
                         {
                             detectedSound.clip = detected;
                             detectedSound.Play();
@@ -91,10 +95,14 @@ public class EnemyController : MonoBehaviour
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
                         if (!didScream)
                         {
+
                             gameManeger.GetComponent<enemytracker>().sreamRadious(this.gameObject);
                             didScream = true;
-                            
-                            Debug.Log("scream");
+                            if(screamCounter < 2)
+                            {
+                                detectedSound.clip = scream;
+                                detectedSound.Play();
+                            }
                         }
 
                     }
@@ -186,8 +194,8 @@ public class EnemyController : MonoBehaviour
     private void OnDrawGizmos()
     {
         //Shows the radius as a white circle
-        Gizmos.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, viewRadius);
+        //Gizmos.color = Color.white;
+        //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, viewRadius);
 
         //Shows the cone of view as two green lines
         Vector3 viewAngle1 = DirectionFromviewAngle(-transform.eulerAngles.z, -viewAngle * 0.5f);

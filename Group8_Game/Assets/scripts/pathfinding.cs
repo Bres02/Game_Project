@@ -51,15 +51,7 @@ public class pathfinding: MonoBehaviour
                 patrolPoints.RemoveAt(0);
                 path(enemy.position, patrolPoints[0].transform.position);
             }
-            Debug.Log(state + this.name);
-        }
-        else if (state.Equals(enemyState.chase))
-        {
-            path(enemy.position, player.position);
-            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, runeSpeed * Time.deltaTime);
-            counter = 0;
-            Debug.Log(state + this.name);
-        }
+        } 
         else if (state.Equals(enemyState.search))
         {
             if (counter < 60)
@@ -89,7 +81,6 @@ public class pathfinding: MonoBehaviour
                 }
 
             }
-            Debug.Log(state + this.name);
         }
         if (GetComponent<EnemyController>().canSeePlayer == false)
         {
@@ -108,7 +99,12 @@ public class pathfinding: MonoBehaviour
     private void Update()
     {
 
-
+        if (state.Equals(enemyState.chase))
+        {
+            path(enemy.position, player.position);
+            transform.position = Vector2.MoveTowards(transform.position, order[0].worldPosition, runeSpeed * Time.deltaTime);
+            counter = 0;
+        }
     }
 
 

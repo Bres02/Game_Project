@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 1897286380883582226}
     - target: {fileID: 725152027359625600, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 725152027359625600, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: runeSpeed
@@ -93,8 +93,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4640147667031207435, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
+      propertyPath: scream
+      value: 
+      objectReference: {fileID: 8300000, guid: d86e7fe4ea28bb042a891b354afb75cf, type: 3}
+    - target: {fileID: 4640147667031207435, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: WalkSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640147667031207435, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
+      propertyPath: isWarrior
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4640147667031207435, guid: 8d2f8b9dec5af15409c9e7071ec27f3f, type: 3}
       propertyPath: viewAngle

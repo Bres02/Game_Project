@@ -21,6 +21,25 @@ public class LockerManager : MonoBehaviour
         lockerSound = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        /*if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden == true)
+        {
+            solidLock.enabled = true;
+            Debug.Log("E pressed: Player Exiting Locker");
+            player.transform.position = lastposition;
+            playerStatus.lockMove = false;
+            playerStatus.hidden = false;
+            anim.SetBool("Empty", true);
+            anim.SetBool("Full", false);
+            if (!playerStatus.lockMove)
+            {
+                lockerSound.clip = doorSound;
+                lockerSound.Play();
+            }
+        }*/
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         lastposition = collision.transform.position;
@@ -33,11 +52,33 @@ public class LockerManager : MonoBehaviour
         {
             inRange = true;
 
-            //If player hits E while in range, player will enter/exit locker
-            if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden != true && playerStatus.lockMove != true)
+            if (Input.GetKeyUp(KeyCode.R) && playerStatus.hidden == true && playerStatus.hidden == true && inRange)
             {
+                player.transform.position = lastposition;
+                solidLock.enabled = true;
+                //Debug.Log("E pressed: Player Exiting Locker");
+                playerStatus.lockMove = false;
+                playerStatus.hidden = false;
+                inRange = false;
+                anim.SetBool("Empty", true);
+                anim.SetBool("Full", false);
+                if (!playerStatus.lockMove)
+                {
+                    lockerSound.clip = doorSound;
+                    lockerSound.Play();
+                }
+
+
+
+            }
+
+            //If player hits E while in range, player will enter/exit locker
+            if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden != true && playerStatus.lockMove != true && inRange)
+            {
+                
+
                 solidLock.enabled = false;
-                Debug.Log("E pressed: Player Entering Locker");
+                //Debug.Log("E pressed: Player Entering Locker");
                 player.transform.position = locker.transform.position;
                 playerStatus.lockMove = true;
                 playerStatus.hidden = true;
@@ -49,23 +90,8 @@ public class LockerManager : MonoBehaviour
                     lockerSound.Play();
                 }
 
-            } else if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden == true)
-            {
-                solidLock.enabled = true;
-                Debug.Log("E pressed: Player Exiting Locker");
-                player.transform.position = lastposition;
-                playerStatus.lockMove = false;
-                playerStatus.hidden = false;
-                anim.SetBool("Empty", true);
-                anim.SetBool("Full", false);
-                if (!playerStatus.lockMove)
-                {
-                    lockerSound.clip = doorSound;
-                    lockerSound.Play();
-                }
-                
-
-            }
+            } 
+            
             //Prevents players from moving out of lockers due to physics upon entering them
             if (playerStatus.hidden != false && player.transform.position != locker.transform.position)
             {

@@ -475,10 +475,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Use Arrows / WASD to move.\n\tCarful not to press opposite buttons as
-    your \n\tindecision is likely to get you caught.\n\nUse E key to hide in lockers.\n\nHold
-    Space to start sprinting.\n\tYou may need to wait to run if you\n\tdrain the
-    bar completely.\n\nAvoid the Enemies, if they catch you, it is an imediate game
-    over.\n\nFind the Exit to each level and escape this infestation. \n\nGood Luck."
+    your \n\tindecision is likely to get you caught.\n\nUse E/R key to hide in or
+    exit lockers.\n\nHold Space to start sprinting.\n\tYou may need to wait to run
+    if you\n\tdrain the bar completely.\n\nAvoid the Enemies, if they catch you,
+    it is an imediate game over.\n\nFind the Exit to each level and escape this infestation.
+    \n\nGood Luck."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c76d23a10436ceb40b30fa7c184ce022, type: 2}
   m_sharedMaterial: {fileID: -8735401716356582586, guid: c76d23a10436ceb40b30fa7c184ce022, type: 2}

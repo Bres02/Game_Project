@@ -44,6 +44,6 @@ public class LevelManager : MonoBehaviour
     {
         Application.Quit();
         //Comment out unity Editor before making the final build
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }

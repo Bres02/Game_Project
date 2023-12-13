@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 725152027359625600}
   - component: {fileID: 4498412649112202307}
   - component: {fileID: 8914399689096925465}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Drone
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -179,12 +179,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectedSound: {fileID: 8914399689096925465}
   detected: {fileID: 8300000, guid: f8bdab27aea20f84aae44c13be99d994, type: 3}
+  scream: {fileID: 0}
   WalkSpeed: 4
   SpeedLimiter: 0.7
   viewRadius: 5
   viewAngle: 163
   player: {fileID: 4670685192953365770, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
-  playerRef: {fileID: 0}
+  gameManeger: {fileID: 2354634709842011082, guid: cf548f986222abd409d684ee00a703e5, type: 3}
+  isWarrior: 0
+  playerRef: {fileID: 6319781798338836118, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
   targetMask:
     serializedVersion: 2
     m_Bits: 64
@@ -208,13 +211,13 @@ MonoBehaviour:
   enemy: {fileID: 763961448413994078}
   player: {fileID: 0}
   state: 0
-  moveSpeed: 10
-  runeSpeed: 6
+  moveSpeed: 4
+  runeSpeed: 5
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 2354634709842011082, guid: cf548f986222abd409d684ee00a703e5, type: 3}
 --- !u!95 &4498412649112202307
 Animator:
   serializedVersion: 5

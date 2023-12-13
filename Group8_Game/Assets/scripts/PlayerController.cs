@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public static StamManager sm;
     Animator anim;
     Rigidbody2D rb;
-    SpriteRenderer sprite;
+    [SerializeField] SpriteRenderer sprite;
     private Vector2 movement;
     public float MoveSpeed;
     public float WalkSpeed = 5f;
