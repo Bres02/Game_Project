@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class pathfinding : MonoBehaviour
+public class pathfinding: MonoBehaviour
 {
     int counter = 0;
 
@@ -20,6 +20,8 @@ public class pathfinding : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float runeSpeed;
+
+    [SerializeField] public bool isWarrior;
     
     
     [SerializeField] private List<GameObject> patrolPoints;

@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     public float viewRadius = 5f;
     [Range(1, 360)] public float viewAngle = 45f;
     [SerializeField] PlayerController player;
+    [SerializeField] GameObject gameManeger;
     public GameObject playerRef;
     public LayerMask targetMask;
     public LayerMask wallMask;
@@ -73,7 +74,7 @@ public class EnemyController : MonoBehaviour
                     {
                         canSeePlayer = true;
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
-                        //Debug.Log("Player spoted by enemy!");
+                        
                     }
                     else
                     {
