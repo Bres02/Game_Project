@@ -8,6 +8,10 @@ public class EnemyController : MonoBehaviour
 {
     enum enemyState { patrol, chase, search };
     LevelManager levelManager;
+
+    [SerializeField] AudioSource detectedSound;
+    [SerializeField] AudioClip detected;
+
     //movement values
     Vector2 target;
     public float WalkSpeed = 5f;
@@ -25,12 +29,14 @@ public class EnemyController : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask wallMask;
     public bool canSeePlayer;
+    private int counter = 0;
 
     [SerializeField] bool isDemo;
     // Start is called before the first frame update
     void Start()
     {
         //Sets the reference to player and starts the FOVRoutine at the start
+        detectedSound = GetComponent<AudioSource>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
     }
@@ -54,7 +60,7 @@ public class EnemyController : MonoBehaviour
     {
         //Creats an array for objects in the target layer that are within the viewable radius of the object
         Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
-
+        counter = 0;
         //If the array's length isn't 0, than an object in the target layer is in the radius
         if (rangeCheck.Length != 0)
         {
@@ -70,9 +76,15 @@ public class EnemyController : MonoBehaviour
                 //Checks to see if there is an object on wall layer between it and target, if not it sees target
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, wallMask))
                 {
-                    if(player.hidden == false)
+                    counter += 1;
+                    if (player.hidden == false)
                     {
                         canSeePlayer = true;
+                        if (canSeePlayer && counter < 2)
+                        {
+                            detectedSound.clip = detected;
+                            detectedSound.Play();
+                        }
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
                         
                     }
@@ -95,6 +107,7 @@ public class EnemyController : MonoBehaviour
                 }
                 else
                 {
+                    detectedSound.Pause();
                     canSeePlayer = false;
                     if (this.GetComponent<pathfinding>().state == (pathfinding.enemyState)enemyState.search)
                     {

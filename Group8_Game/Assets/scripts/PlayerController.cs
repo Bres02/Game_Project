@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    [SerializeField] AudioSource dashSound;
+    [SerializeField] AudioClip dash;
     public static StamManager sm;
     Animator anim;
     Rigidbody2D rb;
+    SpriteRenderer sprite;
     private Vector2 movement;
     public float MoveSpeed;
     public float WalkSpeed = 5f;
@@ -22,9 +26,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        dashSound = GetComponent<AudioSource>();
         sm = GameObject.FindGameObjectWithTag("GameController").GetComponent<StamManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        sprite = gameObject.GetComponent<SpriteRenderer>();
         MoveSpeed = WalkSpeed;
     }
 
@@ -64,10 +70,19 @@ public class PlayerController : MonoBehaviour
 
             }
 
+
             //Calls the sprint method
             Sprint();
         }
-        
+
+        if (hidden == true)
+        {
+            sprite.enabled = false;
+        }
+        else if (hidden == false)
+        {
+            sprite.enabled = true;
+        }
 
         //Testing hide mechanic is working for enemy sight
         if (hide_test == true)
@@ -91,6 +106,11 @@ public class PlayerController : MonoBehaviour
             {
                 sm.consumeStamina(Cost);
                 MoveSpeed += Accelerate * Time.deltaTime;
+                if(MoveSpeed <= (WalkSpeed + .2f))
+                {
+                    dashSound.clip = dash;
+                    dashSound.Play();
+                }
             }
             else if (MoveSpeed > WalkSpeed)
             {

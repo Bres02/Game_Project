@@ -7,6 +7,8 @@ public class LockerManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] PlayerController playerStatus;
     [SerializeField] GameObject locker;
+    [SerializeField] AudioSource lockerSound;
+    [SerializeField] AudioClip doorSound;
     Animator anim;
     BoxCollider2D solidLock;
     public Vector3 lastposition;
@@ -16,6 +18,7 @@ public class LockerManager : MonoBehaviour
     {
         solidLock = GetComponent<BoxCollider2D>();
         anim = gameObject.GetComponent<Animator>();
+        lockerSound = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +44,11 @@ public class LockerManager : MonoBehaviour
                 playerStatus.hidden = true;
                 anim.SetBool("Full", true);
                 anim.SetBool("Empty", false);
+                if (playerStatus.lockMove)
+                {
+                    lockerSound.clip = doorSound;
+                    lockerSound.Play();
+                }
 
             } else if (Input.GetKeyUp(KeyCode.E) && playerStatus.hidden == true)
             {
@@ -51,7 +59,12 @@ public class LockerManager : MonoBehaviour
                 playerStatus.hidden = false;
                 anim.SetBool("Empty", true);
                 anim.SetBool("Full", false);
-
+                if (!playerStatus.lockMove)
+                {
+                    lockerSound.clip = doorSound;
+                    lockerSound.Play();
+                }
+                
 
             }
             //Prevents players from moving out of lockers due to physics upon entering them

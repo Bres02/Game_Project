@@ -20240,6 +20240,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (3)
@@ -20297,6 +20305,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (2)
@@ -20354,6 +20370,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (11)
@@ -41035,6 +41059,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (20)
@@ -41160,7 +41192,7 @@ Transform:
   m_GameObject: {fileID: 553709416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 15000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45180,6 +45212,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (19)
@@ -45237,6 +45277,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (18)
@@ -45294,6 +45342,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (6)
@@ -45351,6 +45407,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (15)
@@ -45408,6 +45472,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (17)
@@ -45465,6 +45537,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (4)
@@ -45522,6 +45602,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (9)
@@ -45579,6 +45667,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (14)
@@ -45636,6 +45732,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (5)
@@ -45693,6 +45797,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (8)
@@ -45750,6 +45862,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (13)
@@ -45856,6 +45976,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
+--- !u!114 &1394232145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4670685192953365770, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
+  m_PrefabInstance: {fileID: 1394232144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394232146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4106bd78552759448b4e4cbe90044dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1394232146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6319781798338836118, guid: bf7c782d52e807f47967af00ddd19560, type: 3}
+  m_PrefabInstance: {fileID: 1394232144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1412994454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45864,6 +46000,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (16)
@@ -45921,6 +46065,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (1)
@@ -45978,6 +46130,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (12)
@@ -46143,6 +46303,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant
@@ -46200,6 +46368,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (10)
@@ -46257,6 +46433,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1394232146}
+    - target: {fileID: 5269582538629571456, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
+      propertyPath: playerStatus
+      value: 
+      objectReference: {fileID: 1394232145}
     - target: {fileID: 6196290734665110082, guid: b90ca059a02eb9b428f49e8f893d3b1b, type: 3}
       propertyPath: m_Name
       value: Locker Variant (7)
