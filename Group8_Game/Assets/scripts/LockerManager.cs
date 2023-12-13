@@ -23,7 +23,6 @@ public class LockerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Player in Range: Saving Position");
         lastposition = collision.transform.position;
     }
 

@@ -24,7 +24,6 @@ public class grid : MonoBehaviour
         nodeDiamiter = nodeRadius * 2;
         gridizeX = Mathf.RoundToInt(worldSize.x / nodeDiamiter);
         gridizeY = Mathf.RoundToInt(worldSize.y / nodeDiamiter);
-        Debug.Log(gridizeX + " " + gridizeY);
         createGrid();
     
     }

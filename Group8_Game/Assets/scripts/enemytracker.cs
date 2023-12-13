@@ -6,11 +6,11 @@ public class enemytracker : MonoBehaviour
 {
     [SerializeField] public List<GameObject> enemylocations;
 
-    void sreamRadious(GameObject screamer)
+    public void sreamRadious(GameObject screamer)
     {
         foreach (GameObject enemy in enemylocations) 
         {
-            if (enemy.transform.position != screamer.transform.position && Vector2.Distance(enemy.transform.position, screamer.transform.position) < 5f)
+            if (enemy.name != screamer.name && Vector2.Distance(enemy.transform.position, screamer.transform.position) < 30f)
             {
                 enemy.GetComponent<pathfinding>().state = pathfinding.enemyState.search;
             }

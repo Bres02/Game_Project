@@ -25,11 +25,14 @@ public class EnemyController : MonoBehaviour
     [Range(1, 360)] public float viewAngle = 45f;
     [SerializeField] PlayerController player;
     [SerializeField] GameObject gameManeger;
+    [SerializeField] public bool isWarrior;
     public GameObject playerRef;
     public LayerMask targetMask;
     public LayerMask wallMask;
     public bool canSeePlayer;
     private int counter = 0;
+
+    private bool didScream = false;
 
     [SerializeField] bool isDemo;
     // Start is called before the first frame update
@@ -86,7 +89,14 @@ public class EnemyController : MonoBehaviour
                             detectedSound.Play();
                         }
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.chase;
-                        
+                        if (!didScream)
+                        {
+                            gameManeger.GetComponent<enemytracker>().sreamRadious(this.gameObject);
+                            didScream = true;
+                            
+                            Debug.Log("scream");
+                        }
+
                     }
                     else
                     {
@@ -120,6 +130,10 @@ public class EnemyController : MonoBehaviour
                     else
                     {
                         this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                        if (didScream)
+                        {
+                            didScream = false;
+                        }
                     }
                 }
             }
@@ -137,6 +151,10 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                    if (didScream)
+                    {
+                        didScream = false;
+                    }
                 }
             }
         }
@@ -154,6 +172,10 @@ public class EnemyController : MonoBehaviour
             else
             {
                 this.GetComponent<pathfinding>().state = (pathfinding.enemyState)enemyState.patrol;
+                if (didScream)
+                {
+                    didScream = false;
+                }
             }
             Debug.Log("Enemy has lost sight of player");
         }
@@ -199,8 +221,6 @@ public class EnemyController : MonoBehaviour
             Vector3 Look = transform.InverseTransformPoint(GetComponent<pathfinding>().order[0].worldPosition);
             float targetAngle = Mathf.Atan2(Look.y, Look.x) * Mathf.Rad2Deg - 90;
             transform.Rotate(0, 0, targetAngle);
-            /*Vector3 towards = GetComponent<pathfinding>().order[0].worldPosition - transform.position;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(towards), .02f);*/
         }
         //If able to see player, object will rotate to follow the player position
         else if (canSeePlayer)
